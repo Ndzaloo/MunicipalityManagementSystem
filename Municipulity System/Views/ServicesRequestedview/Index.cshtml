@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Municipulity_System.Models.ServicesRequested>
+@{
+    Layout = "_Layout";
+}
+<h2>Services Requested</h2>
+<a asp-action="Create">Request New Service</a>
+<table>
+<thead>
+        <tr>
+<th>Service Type</th>
+<th>Status</th>
+<th>Date</th>
+<th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+<tr>
+<td>@item.ServiceType</td>
+<td>@item.Status</td>
+<td>@item.RequestedDate.ToShortDateString()</td>
+<td>
+<a asp-action="Edit" asp-route-id="@item.RequestID">Edit</a> |
+<a asp-action="Delete" asp-route-id="@item.RequestID">Delete</a>
+</td>
+</tr>
+}
+    </tbody>
+</table>

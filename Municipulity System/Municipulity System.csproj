@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Municipulity_System</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Shared\Aboutpage.cshtml" />
+    <Content Remove="Views\Shared\Contactform.cshtml" />
+    <Content Remove="Views\Shared\Indexpage.cshtml" />
+    <Content Remove="Views\Shared\Privacypolicy.cshtml" />
+    <Content Remove="wwwroot\css\Site.cshtml" />
+    <Content Remove="wwwroot\css\Site.cshtml.cs" />
+    <Content Remove="wwwroot\css\StyleSheet.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\_ViewImports.cshtml" />
+    <None Include="Pages\_ViewStart.cshtml" />
+    <None Include="Views\Shared\Aboutpage.cshtml" />
+    <None Include="Views\Shared\Contactform.cshtml" />
+    <None Include="Views\Shared\Indexpage.cshtml" />
+    <None Include="Views\Shared\Privacypolicy.cshtml" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+﻿@model Municipulity_System.Models.Citizen
+@{
+    Layout = "_Layout";
+}
+
+<h1>Delete Citizen</h1>
+
+<h3>Are you sure you want to delete this citizen?</h3>
+
+<div>
+    <h4>@Model.FullName</h4>
+    <p>Address: @Model.Address</p>
+    <p>Phone Number: @Model.PhoneNUmber</p>
+    <p>Email: @Model.Email</p>
+    <p>Date of Birth: @Model.DateOfBirth?.ToString("d")</p>
+</div>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+</form>

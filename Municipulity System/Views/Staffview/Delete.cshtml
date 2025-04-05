@@ -1,0 +1,10 @@
+﻿@model Municipulity_System.Models.Staff
+@{
+    Layout = "_Layout";
+}
+<h2>Delete Staff</h2>
+<p>Are you sure you want to delete @Model.StaffName?</p>
+<form asp-action="DeletionConfirmed">
+<input type="hidden" asp-for="StaffID" />
+<button type="submit">Delete</button>
+</form>

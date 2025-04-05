@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Municipulity_System.Models.Staff>
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewData["Title"] = "Staff Management";
+    Layout = "_Layout";
+}
+<div class="container mt-5"></div>
+
+<h2>Staff List</h2>
+<a asp-action="Create">Create New</a>
+<table>
+<thead>
+<tr>
+<th>StaffName</th>
+<th>Occupation</th>
+<th>Department</th>
+<th></th>
+        </tr>
+</thead>
+<tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+<td>@item.StaffName</td>
+<td>@item.Occupation</td>
+<td>@item.Department</td>
+<td>
+<a url.action="Edit" asp-route-id="@item.StaffID">Edit</a> |
+<a url.action="Delete" asp-route-id="@item.StaffID">Delete</a>
+</td>
+</tr>      }
+</tbody>
+</table>
