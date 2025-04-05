@@ -1,0 +1,12 @@
+﻿@model Municipulity_System.Models.ServicesRequested
+@{
+    Layout = "_Layout";
+}
+<h2>Edit Service Request</h2>
+<form asp-action="Edit">
+<input type="hidden" asp-for="RequestID" />
+<label>Service Type</label>
+ <input asp-for="ServiceType" />
+<label>Status</label>
+   <input asp-for="Status" />  <button type="submit">Update</button>
+</form>

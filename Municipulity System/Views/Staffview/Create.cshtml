@@ -1,0 +1,14 @@
+﻿@model Municipulity_System.Models.Staff
+@{
+    Layout = "_Layout";
+}
+<h2>Create Staff</h2>
+<form asp-action="Create">
+<label>StaffName</label>
+<input asp-for="StaffName" />
+<label>Occupation</label>
+<input asp-for="Occupation" />
+<label>Department</label>
+<input asp-for="Department" />
+<button type="submit">Create</button>
+</form>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Municipulity_System.Models.Citizen>
+@{
+    ViewData["Title"] = "Citizens Index";
+}
+<h1>@ViewData["Title"]</h1>
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Create New Citizen</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+  <th>@Html.DisplayNameFor(model=> model.FullName)</th>
+   <th>@Html.DisplayNameFor(model=> model.Address)</th>
+  <th>@Html.DisplayNameFor(model =>model.PhoneNUmber)</th>
+ <th>@Html.DisplayNameFor(model =>model.Email)</th>
+   <th>@Html.DisplayNameFor(model =>model.DateOfBirth)</th>
+            @{
+                Layout = "_Layout";
+            }
+   <th>@Html.DisplayNameFor(model=> model.RegisteredDate)</th>
+      <th>Actions</th>
+ </tr>
+</thead>
+    <tbody>
+        @foreach (var citizen in Model) 
+        {
+        <tr>
+ <td>@citizen.FullName??"N/A" </td>
+  <td>@citizen.Address??"N/A"</td>
+ <td>@citizen.PhoneNUmber??"N/A"</td>
+  <td>@citizen.Email??"N/A"</td>
+  <td>@citizen.DateOfBirth?.ToString("yyyy-MM-dd") ??"N/A"</td>
+<td>@citizen.RegisteredDate.ToString("yyyy-MM-dd") ??"N/A"</td>
+    <td>
+   <a href="@Url.Action("Edit", new { id = citizen.CitizenID })" class="btn btn-warning">Edit</a>
+    <a href="@Url.Action("Delete", new { id = citizen.CitizenID })" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

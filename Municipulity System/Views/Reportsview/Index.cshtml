@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Municipulity_System.Models.Reports>
+    
+    <h2>Reports</h2>
+    <p>
+        <a asp-action="Create">Create New Report</a>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Report ID</th>
+                <th>Citizen ID</th>
+                <th>Report Type</th>
+                <th>Details</th>
+                <th>Submission Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ReportID</td>
+                    <td>@item.CitizenID</td>
+                    <td>@item.ReportType</td>
+                    <td>@item.Details</td>
+                    <td>@item.SubmissionDate.ToShortDateString()</td>
+                    <td>@item.Status</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ReportID">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.ReportID">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.ReportID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
